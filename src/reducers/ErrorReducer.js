@@ -1,15 +1,12 @@
-import {
-  CREATE_ERROR,
-  CLEAR_ERROR
-} from '../actions/types';
+import * as types from '../actions/types';
 
 export default (state = '', action) => {
-  switch (action.type) {
-    case CREATE_ERROR:
-      return 'There was an error inserting this record';
-    case CLEAR_ERROR:
-      return '';
+    switch (action.type) {
+    case types.CREATE_ERROR:
+        return 'There was an error inserting this record';
+    case types.CLEAR_ERROR:
+        return '';
     default:
-      return state;
-  }
+        return state;
+    }
 };

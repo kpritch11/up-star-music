@@ -1,24 +1,20 @@
-import {
-  SEARCH_ARTISTS,
-  FIND_ARTIST,
-  RESET_ARTIST
-} from '../actions/types';
+import * as types from '../actions/types';
 
 const INITIAL_STATE = {
-  all: [],
-  offset: 0,
-  limit: 20
+    all: [],
+    offset: 0,
+    limit: 20
 };
 
 export default (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case SEARCH_ARTISTS:
-      return action.payload;
-    case FIND_ARTIST:
-      return { ...state, artist: action.payload };
-    case RESET_ARTIST:
-      return { ...state, artist: null };
+    switch (action.type) {
+    case types.SEARCH_ARTISTS:
+        return action.payload;
+    case types.FIND_ARTIST:
+        return { ...state, artist: action.payload };
+    case types.RESET_ARTIST:
+        return { ...state, artist: null };
     default:
-      return state;
-  }
+        return state;
+    }
 };

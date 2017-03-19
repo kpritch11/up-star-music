@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const AlbumSchema = require('./album');
 
+mongoose.Promise = global.Promise;
+
 const ArtistSchema = new Schema({
     name: String,
     age: Number,

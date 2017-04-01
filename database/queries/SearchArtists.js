@@ -29,6 +29,9 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
 const buildQuery = (criteria) => {
     const query = {};
 
+    if (criteria.name) {
+        query.$text = { $search: criteria.name }; // only does full word match
+    }
     if (criteria.age) {
         query.age = {
             $gte: criteria.age.min,
